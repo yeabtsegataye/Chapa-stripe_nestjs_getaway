@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PaymentsModule } from './payment/payment.module';
 import { ChapaModule } from 'chapa-nestjs';
 import { ConfigModule } from '@nestjs/config';
+
 @Module({
   imports: [
     ConfigModule.forRoot({

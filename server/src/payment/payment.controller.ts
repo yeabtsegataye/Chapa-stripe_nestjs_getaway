@@ -8,8 +8,13 @@ import { CreatePaymentDto } from './dto/create-payment.dto';
 export class PaymentsController {
   constructor(private readonly paymentsService: PaymentsService) {}
 
-  @Post('create')
-  async createPayment(@Body() createPaymentDto: CreatePaymentDto){
-    return this.paymentsService.createPayment(createPaymentDto);
+  @Post('create_chapa')
+  async chapaPayment(@Body() createPaymentDto: CreatePaymentDto){
+    return this.paymentsService.chapaPayment(createPaymentDto);
+  }
+  //////////
+  @Post('create_card')
+  async cardPayment(@Body() createPaymentDto: CreatePaymentDto){
+    return this.paymentsService.cardPayment(createPaymentDto);
   }
 }
