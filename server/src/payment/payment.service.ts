@@ -5,9 +5,9 @@ import { Payment } from './entities/payment.entity';
 import { CreatePaymentDto } from './dto/create-payment.dto';
 import { ChapaService } from 'chapa-nestjs';
 import { Shoe } from 'src/shoes/entities/shoe.entity';
-const stripe = require('stripe')(
-  'sk_test_51PWwKwEBZmMLCP04PELhYOWmhnzB0RI6YPI4ADAytkmNMIJNSMxhfRSSyCeVzOgLZdBqGBnkSvXIFSwdpzv3TWsI00rCOZEGg8',
-);
+import * as dotenv from 'dotenv';
+dotenv.config(); // Load environment variables
+const stripe = require('stripe')(`${process.env.STRIPE_SECRET_KEY}`);
 
 @Injectable()
 export class PaymentsService {
